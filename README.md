@@ -6,9 +6,9 @@ To learn more about writing AWS Lambda functions in python, go to [the official 
 
 Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/)
 
-[![Pyhton-Lambda-Doc][1]]
-[![Blog][2]]
-[![Sample][3]]
+[![Pyhton-Lambda-Doc][1]][1]
+[![Blog][2]][2]
+[![Sample][3]][3]
 
 [1]: https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html
 [2]: https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/
