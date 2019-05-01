@@ -16,6 +16,8 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 
 # Getting Started
 
+According to default lambda configuration lambda_function.py will be the first file called by lambda and lambda_handler will be the first function. 
+
 ``` Python
 ## lambda_function.py
 
