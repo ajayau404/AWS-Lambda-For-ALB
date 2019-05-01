@@ -10,14 +10,14 @@ EVENT_FROM_ALB = {
 					u"requestContext": 
 					{u"elb": 
 						{
-							u"targetGroupArn": u"arn:aws:elb:ap-south-1:11:targetgroup/FROM_TARGET-GROUP/abc"
+							u"targetGroupArn": u"arn:aws:elb:ap-region-1:11:targetgroup/FROM_TARGET-GROUP/abc"
 						}
 					}, 
 					u"queryStringParameters": {"a":1}, 
 					u"httpMethod": u"GET", 
 					u"headers": 
 					{
-						u"via": u"2.0 4aa28bcc65e3ef2d86092c330ba8b572.cloudfront.net (CloudFront)", 
+						u"via": u"2.0 test.cloudfront.net (CloudFront)", 
 						u"accept-language": u"en-US,en;q=0.5", 
 						u"cloudfront-viewer-country": u"IN", 
 						u"accept": u"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", 
@@ -31,16 +31,16 @@ EVENT_FROM_ALB = {
 						u"cloudfront-is-desktop-viewer": u"true", 
 						u"cloudfront-is-smarttv-viewer": u"false", 
 						u"x-forwarded-for": u"119.82.100.218, 70.132.7.73", 
-						u"x-amzn-trace-id": u"Root=1-5c0a5a83-62fbb590a25af18a334c00ba", 
+						u"x-amzn-trace-id": u"Root=1-5c0a5a83-123344", 
 						u"host": u"clib.fyers.in", 
 						u"x-forwarded-proto": u"https", 
-						u"x-amz-cf-id": u"qcHWeCzVnSMpkIcCWKsTm1SKw7kcWx5lUXbsIxONBIboWR4MBKyM8w==", 
+						u"x-amz-cf-id": u"abc==", 
 						u"pragma": u"no-cache", 
 						u"connection": u"Keep-Alive", 
 						u"cloudfront-is-tablet-viewer": u"false", 
 						u"cloudfront-forwarded-proto": u"https"
 					}, 
-					u"path": u"/tv/v1/accounts/123/orders/345/", 
+					u"path": u"/Some_ramdom_path/345/", 
 					u"isBase64Encoded": False
 				}
 
