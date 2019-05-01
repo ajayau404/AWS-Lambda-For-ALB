@@ -10,6 +10,9 @@ import inp_validatn as inpValid
 import funct_defines as funDef
 
 def lambda_handler(event,context):
+	"""
+	lambda_function and lambda_handler are the name of the file and function name that should be specified in lambda configuration.
+	"""
 	reqObj = Req.Request(event)
 	resObj = Res.Response()
 	
@@ -23,7 +26,7 @@ def lambda_handler(event,context):
 		retDomValid = inpValid.validateDomain(respDict["referer"])
 		if retDomValid[funDef.FUNCTION_STAT] == funDef.SUCCESS:
 			## Success
-			resObj.setHeader("access-control-allow-origin", respDict["referer"])
+			resObj.setHeader("Access-Control-Allow-Origin", respDict["referer"])
 			resObj.setResp(httpCode = 200, httpCodeStr = "200 OK", respBody = "")
 		else:
 			## Error
@@ -32,8 +35,8 @@ def lambda_handler(event,context):
 
 	if reqObj.httpMeth().upper() == "OPTIONS":
 		resObj.setHeader("Access-Control-Allow-Headers", "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token")
-		resObj.setHeader("access-control-allow-credentials", True)
-		resObj.setHeader("access-control-allow-methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS")
+		resObj.setHeader("Access-Control-Allow-Credentials", True)
+		resObj.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS")
 		return resObj()
 
 	if pathList == None:
