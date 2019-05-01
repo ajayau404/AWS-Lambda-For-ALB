@@ -21,8 +21,7 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 
 import lambda_function as lf
 
-EVENT_FROM_ALB = {
-					u"body": u"", 
+EVENT_FROM_ALB = {  "body": u"", 
 					u"requestContext": 
 					{u"elb": 
 						{
