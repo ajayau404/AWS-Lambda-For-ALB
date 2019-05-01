@@ -12,7 +12,6 @@ When the URL is in REST format then use ld.URL_REST_ID_STR in the mapping to ind
 /user/123/
 To indicate user id as 123 use ld.URL_REST_ID_STR.
 empty string "" in the mapping will be maping to exact path of the request.
-
 """
 FUNCT_MAPPING = {
 	"": {"": allFun.index},

@@ -17,6 +17,7 @@ def lambda_handler(event,context):
 	resObj = Res.Response()
 	
 	pathList = reqObj.getPathList()
+	## For testing to get the event sent by ALB
 	# print("pathList:", pathList)
 	# resObj.setResp(respBody = event, httpCode = 200, httpCodeStr = "200 OK")
 	# return resObj()
@@ -27,7 +28,6 @@ def lambda_handler(event,context):
 		if retDomValid[funDef.FUNCTION_STAT] == funDef.SUCCESS:
 			## Success
 			resObj.setHeader("Access-Control-Allow-Origin", respDict["referer"])
-			# resObj.setResp(respBody = "", httpCode = 200, httpCodeStr = "200 OK")
 		else:
 			## Error
 			resObj.setError(respBody = "Not authorized", httpCode = 400, httpCodeStr = "400 ERROR")
