@@ -25,15 +25,16 @@ class Response(object):
 						RESP_BODY_STR				: "Unknown"
 					}
 
-	def setResp(self, httpCode = 200, httpCodeStr = "200 OK", respBody = ""):
+	def setResp(self, respBody = "", httpCode = 200, httpCodeStr = "200 OK"):
 		"""
 		Set success response
 		"""
+		# print("200")
 		self.resp[RESP_STATUS_CODE_STR] 	= httpCode
 		self.resp[RESP_STATUS_DESCR_STR] 	= httpCodeStr
 		self.resp[RESP_BODY_STR] 			= respBody
 
-	def setError(self, httpCode = 500, httpCodeStr = "500 ERROR", respBody = ""):
+	def setError(self, respBody = "", httpCode = 500, httpCodeStr = "500 ERROR"):
 		"""
 		Set error response
 		"""

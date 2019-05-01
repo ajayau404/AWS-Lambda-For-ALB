@@ -10,21 +10,20 @@ the URL path that has been provided.
 
 When the URL is in REST format then use ld.URL_REST_ID_STR in the mapping to indicate the REST-ID
 /user/123/
-To indicate user id as 123 use ld.URL_REST_ID_STR
+To indicate user id as 123 use ld.URL_REST_ID_STR.
+empty string "" in the mapping will be maping to exact path of the request.
+
 """
 FUNCT_MAPPING = {
-	"":{
-		"GET":allFun.indexGET,
-		"POST":allFun.indexPOST,
-	},
-	"test":{
+	"": {"": allFun.index},
+	"test": {
+		"": allFun.test,
 		ld.URL_REST_ID_STR:{
-			"GET": allFun.userIdGET,
+			"": allFun.testUserId,
 		},
-		"GET": allFun.testGET,
 	},
 	"abc":{
-		"GET": allFun.abcGET,
+		"": allFun.abc,
 	},
 }
 

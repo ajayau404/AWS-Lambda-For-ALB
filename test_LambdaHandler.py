@@ -89,6 +89,7 @@ def testOptions():
 
 def testPath():
 	EVENT_FROM_ALB["headers"]["referer"] = "http://domain1.com"
+
 	## Invalid method
 	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+'/test'
 	# EVENT_FROM_ALB["httpMethod"] = "POST"
@@ -100,19 +101,31 @@ def testPath():
 	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+'/test/123/invalid'
 	# EVENT_FROM_ALB["httpMethod"] = "GET"
 	
+	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+''
+	# EVENT_FROM_ALB["httpMethod"] = "DELETE"
+
+	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+'/test'
+	# EVENT_FROM_ALB["httpMethod"] = "POST"
+
+	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+'/test/123'
+	# EVENT_FROM_ALB["httpMethod"] = "POST"
+
+	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+'/abc'
+	# EVENT_FROM_ALB["httpMethod"] = "DELETE"
+
 	## Valid method
+	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+''
+	# EVENT_FROM_ALB["httpMethod"] = "GET"
+
+	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+''
+	# EVENT_FROM_ALB["httpMethod"] = "POST"
+
 	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+'/test'
 	# EVENT_FROM_ALB["httpMethod"] = "GET"
 	
 	## User-id validation
 	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+'/test/123'
 	# EVENT_FROM_ALB["httpMethod"] = "GET"
-
-	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+''
-	# EVENT_FROM_ALB["httpMethod"] = "GET"
-
-	# EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+''
-	# EVENT_FROM_ALB["httpMethod"] = "POST"
 
 	EVENT_FROM_ALB["path"]= RESOURCE_PREFIX+'/abc'
 	EVENT_FROM_ALB["httpMethod"] = "GET"

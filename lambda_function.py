@@ -18,7 +18,7 @@ def lambda_handler(event,context):
 	
 	pathList = reqObj.getPathList()
 	# print("pathList:", pathList)
-	# resObj.setResp(httpCode = 200, httpCodeStr = "200 OK", respBody = event)
+	# resObj.setResp(respBody = event, httpCode = 200, httpCodeStr = "200 OK")
 	# return resObj()
 
 	respDict = reqObj.getHeaderParm(["referer"])
@@ -27,29 +27,33 @@ def lambda_handler(event,context):
 		if retDomValid[funDef.FUNCTION_STAT] == funDef.SUCCESS:
 			## Success
 			resObj.setHeader("Access-Control-Allow-Origin", respDict["referer"])
-			resObj.setResp(httpCode = 200, httpCodeStr = "200 OK", respBody = "")
+			# resObj.setResp(respBody = "", httpCode = 200, httpCodeStr = "200 OK")
 		else:
 			## Error
-			resObj.setError(httpCode = 400, httpCodeStr = "400 ERROR", respBody = "Not authorized")
+			resObj.setError(respBody = "Not authorized", httpCode = 400, httpCodeStr = "400 ERROR")
 			return resObj()
 
 	if reqObj.httpMeth().upper() == "OPTIONS":
 		resObj.setHeader("Access-Control-Allow-Headers", "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token")
 		resObj.setHeader("Access-Control-Allow-Credentials", True)
 		resObj.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS")
+		resObj.setResp(respBody = "", httpCode = 200, httpCodeStr = "200 OK")
 		return resObj()
 
 	if pathList == None:
-		resObj.setError(httpCode = 400, httpCodeStr = "400 ERROR", respBody = "Invalid request")
+		resObj.setError(respBody = "Invalid request", httpCode = 400, httpCodeStr = "400 ERROR")
 		return resObj()
+
+	## This is hard coaded. Change it if required.
 	if len(pathList) > 10:
-		resObj.setError(httpCode = 400, httpCodeStr = "400 ERROR", respBody = "Invalid resource")
+		resObj.setError(respBody = "Resource not found", httpCode = 404, httpCodeStr = "404 ERROR")
 		return resObj()
 
 	resMap = lm.FUNCT_MAPPING
 
 	mapFlag = True
 	resCount = 0
+	## Loop through the mapping and select the function is mapped to URL path
 	for eachRes in pathList:
 		if eachRes in resMap:
 			resMap = resMap[eachRes]
@@ -65,15 +69,10 @@ def lambda_handler(event,context):
 	# print("pathList resCount:", pathList[resCount:], mapFlag)
 	# print("resMap:", resMap, resCount)
 	if mapFlag:
-		if reqObj.httpMeth() in resMap:
-			respMeth = resMap[reqObj.httpMeth()](reqObj)
-			resObj.setResp(httpCode = 200, httpCodeStr = "200 OK", respBody = respMeth)
-			return resObj()			
-		else:
-			resObj.setError(httpCode = 400, httpCodeStr = "400 ERROR", respBody = "Invalid request method")
-			return resObj()
+		respMeth = resMap[""](reqObj, resObj)
+		return resObj()
 	
-	resObj.setError(httpCode = 400, httpCodeStr = "400 ERROR", respBody = "Invalid resource")
+	resObj.setError(respBody = "Resource not found", httpCode = 404, httpCodeStr = "404 ERROR")
 	return resObj()
 
 def main():

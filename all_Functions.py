@@ -1,17 +1,20 @@
 #!/usr/bin/env python
+def index(req, resp):
+	if req.httpMeth() == "GET":
+		resp.setResp(respBody = "This is index GET")
+	elif req.httpMeth() == "POST":
+		resp.setResp(respBody = "This is index POST", httpCode = 202, httpCodeStr = "202 OK")
+	else:
+		resp.setError(respBody = "Method not found", httpCode = 404, httpCodeStr = "404 ERROR")
 
-def indexGET(req):
-	return "This is indexGET"
+def test(req, resp):
+	if req.httpMeth() == "GET":
+		resp.setResp(respBody = "This is test GET" )
 
-def indexPOST(req):
-	return "This is indexPOST"
+def testUserId(req, resp):
+	if req.httpMeth() == "GET":
+		resp.setResp(respBody = "This is testUserId GET")
 
-def userIdGET(req):
-	return "This is userIdGET"
-
-def testGET(req):
-	return "This is testGET"
-
-def abcGET(req):
-	return "This is abcGET"
-
+def abc(req, resp):
+	if req.httpMeth() == "GET":
+		resp.setResp(respBody = "This is abc GET")
