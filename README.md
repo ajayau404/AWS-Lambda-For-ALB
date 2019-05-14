@@ -12,6 +12,8 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](5)
 [![PyPI download total](https://img.shields.io/pypi/dt/ansicolortags.svg)](6)
 [![PyPI version fury.io](https://badge.fury.io/py/ansicolortags.svg)](7)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)]()
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](2)
 [![Blog][2]](2)
 [![Sample][3]][3]
 
@@ -22,6 +24,8 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 [5]: https://www.python.org/
 [6]: https://pypi.python.org/
 [7]: https://pypi.python.org/pypi/ajayau404/
+[8]: https://pypi.python.org/pypi/ansicolortags/
+
 # Getting Started
 
 According to default lambda configuration lambda_function.py will be the first file called by lambda and lambda_handler will be the first function. 
