@@ -10,12 +10,10 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 [![serverless](http://public.serverless.com/badges/v3.svg)](4)
 [![Pyhton-Lambda-Doc](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](1)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](5)
-[![PyPI download total](https://img.shields.io/pypi/dt/ansicolortags.svg)](6)
 [![PyPI version fury.io](https://badge.fury.io/py/ansicolortags.svg)](7)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)]()
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](2)
-[![Blog][2]](2)
-[![Sample][3]][3]
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](3)
 
 [1]: https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html
 [2]: https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/
