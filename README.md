@@ -9,7 +9,9 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![serverless](http://public.serverless.com/badges/v3.svg)](4)
 [![Pyhton-Lambda-Doc](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](1)
-[![made-with-pytho](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](5)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](5)
+[![PyPI download total](https://img.shields.io/pypi/dt/ansicolortags.svg)](6)
+[![PyPI version fury.io](https://badge.fury.io/py/ansicolortags.svg)](7)
 [![Blog][2]](2)
 [![Sample][3]][3]
 
@@ -18,7 +20,8 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 [3]: https://github.com/aws-samples/serverless-sinatra-sample
 [4]: https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html
 [5]: https://www.python.org/
-
+[6]: https://pypi.python.org/
+[7]: https://pypi.python.org/pypi/ajayau404/
 # Getting Started
 
 According to default lambda configuration lambda_function.py will be the first file called by lambda and lambda_handler will be the first function. 
