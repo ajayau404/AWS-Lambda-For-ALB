@@ -9,13 +9,15 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![serverless](http://public.serverless.com/badges/v3.svg)](4)
 [![Pyhton-Lambda-Doc](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](1)
-[![Blog][2]][2]
+[![made-with-pytho](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](5)
+[![Blog][2]](2)
 [![Sample][3]][3]
 
 [1]: https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html
 [2]: https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/
 [3]: https://github.com/aws-samples/serverless-sinatra-sample
 [4]: https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html
+[5]: https://www.python.org/
 
 # Getting Started
 
