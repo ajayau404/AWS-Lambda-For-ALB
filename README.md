@@ -11,7 +11,7 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 [![Pyhton-Lambda-Doc](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](1)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](5)
 [![PyPI version fury.io](https://badge.fury.io/py/ansicolortags.svg)](7)
-[![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)]()
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](2)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](2)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](3)
 
