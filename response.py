@@ -58,7 +58,7 @@ class Response(object):
 		"""
 		Set header values
 		"""
-		self.resp[RESP_HEADERS_STR][hKey] = hVal
+		self.resp[RESP_HEADERS_STR][hKey] = str(hVal)
 
 	def __dict__(self):
 		if isinstance(self.resp[RESP_BODY_STR], dict):

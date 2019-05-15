@@ -7,9 +7,14 @@ To learn more about writing AWS Lambda functions in python, go to [the official 
 Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/)
 
 
-[![Pyhton-Lambda-Doc][1]][1]
-[![Blog][2]][2]
-[![Sample][3]][3]
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![serverless](http://public.serverless.com/badges/v3.svg)](4)
+[![Pyhton-Lambda-Doc](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](1)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](5)
+[![PyPI version fury.io](https://badge.fury.io/py/ansicolortags.svg)](7)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](2)
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](2)
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](3)
 
 
 [![Pyhton Lambda](https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html)](https://aws.amazon.com/blogs/networking-and-content-delivery/)
@@ -19,6 +24,11 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 [1]: https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html
 [2]: https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/
 [3]: https://github.com/aws-samples/serverless-sinatra-sample
+[4]: https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html
+[5]: https://www.python.org/
+[6]: https://pypi.python.org/
+[7]: https://pypi.python.org/pypi/ajayau404/
+[8]: https://pypi.python.org/pypi/ansicolortags/
 
 # Getting Started
 

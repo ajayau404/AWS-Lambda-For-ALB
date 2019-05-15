@@ -35,7 +35,7 @@ def lambda_handler(event,context):
 
 	if reqObj.httpMeth().upper() == "OPTIONS":
 		resObj.setHeader("Access-Control-Allow-Headers", "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token")
-		resObj.setHeader("Access-Control-Allow-Credentials", True)
+		resObj.setHeader("Access-Control-Allow-Credentials", "true")
 		resObj.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS")
 		resObj.setResp(respBody = "", httpCode = 200, httpCodeStr = "200 OK")
 		return resObj()
