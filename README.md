@@ -36,11 +36,11 @@ This is the AWS lambda framework written in python. When the lambda function is 
 
 This source code contain the following files:
 * **lambda_function** : Contains the code that will be triggered by ALB or API-Gateway etc.
-* request : Contains the request object which is created from the event that is send as an input.
-* response : Contains the object that should be sent back from lambda function to ALB.
-* lambda_mapping : Is the file that contain the mapping for the routes. Add your routes in here.
-* all_functions : Contain the function contains the respective code that can be used for the given path.
-* test_LambdaHandler : Contains the test code that can be usedfortesting all the functions.
+* **request** : Contains the request object which is created from the event that is send as an input.
+* **response** : Contains the object that should be sent back from lambda function to ALB.
+* **lambda_mapping** : Is the file that contain the mapping for the routes. Add your routes in here.
+* **all_functions** : Contain the function contains the respective code that can be used for the given path.
+* **test_LambdaHandler** : Contains the test code that can be usedfortesting all the functions.
 
 ``` Python
 ## lambda_function.py
