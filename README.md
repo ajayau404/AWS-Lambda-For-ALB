@@ -15,10 +15,7 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](2)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](2)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](3)
-
-
-[![Pyhton Lambda](https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html)](https://aws.amazon.com/blogs/networking-and-content-delivery/)
-
+[![Pyhton Lambda](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html)
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 [1]: https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html
