@@ -1,5 +1,5 @@
-import allfunctions
-import function_defines
+import all_Functions
+import funct_defines
 import inp_validatn
 import lambda_defines
 import lambda_function
