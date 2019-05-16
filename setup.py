@@ -12,9 +12,10 @@ install_requires = [
 ]
 
 setup(
-    name='py-lambda',
-    version='1.1.0',
-    description="Lambda framework",
+    name='py_lambda',
+    version='1.1.1',
+    description="Lambda framework for AWS",
+    long_description_content_type="text/markdown",
     long_description=README,
     author="Ajay A U",
     author_email='ajayau404@gmail.com',
