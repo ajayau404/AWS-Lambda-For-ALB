@@ -45,6 +45,8 @@ This source code contain the following files:
 * **all_functions** : Contain the function contains the respective code that can be used for the given path.
 * **test_LambdaHandler** : Contains the test code that can be usedfortesting all the functions.
 
+### Load-Balancer input
+
 ``` Python
 ## test_LambdaHandler.py
 import py_lambda.test_LambdaHandler as lTest
@@ -53,6 +55,93 @@ print(lTest.EVENT_FROM_ALB)
 
 The above code will give the sample of the request that will be send by ALB.
 
+### Mapping
+
+```Python
+## lambda_mapping.py
+
+FUNCT_MAPPING = {
+	"": {"": allFun.index},
+	"test": {
+		"": allFun.test,
+		ld.URL_REST_ID_STR:{
+			"": allFun.testUserId,
+		},
+	},
+	"abc":{
+		"": allFun.abc,
+	},
+}
+```
+
+This will have the mapping for each resources. The mapping is dictionary in which key is the URL resource and the value will be the function that you have to execute when the URL is called. The index URL in the mapping is the first one `"": {"": allFun.index}`.  If all the function for the mapping are in `all_Functions.py` then corrponding function can be called in here.
+
+If the resource contan some information that will change of each request then the mapping should contain `URL_REST_ID_STR` which is there in `lambda_defines.py` form wilch you will be able to map the URL. 
+
+Eg: 	mydomain.com/profile/USER_ID/image
+In this `USER_ID` may change for each user. In that case use `URL_REST_ID_STR` in the mapping
+
+### Input validaation
+
+```python
+## inp_validatn.py
+## VALID_DOMAINS contains all the valid domains.
+## VALID_SUB_DOMAINS contails all the valid subdomains.
+
+import py_lambda.funct_defines as funDef
+
+ret_validation = validateDomain("http://some_domain.com")
+##If the domain is valid then the function will return the success response
+if ret_validation[funDef.FUNCTION_STAT] == funDef.SUCCESS:
+	print("Valid domain")
+else:
+	print("invalid domain")
+```
+
+Input validations can be adde in this function. `validateDomain` will validate the given domain and return success if it is valid.
+
+### Request
+
+```python
+## request.py
+import py_lambda.request as Req
+import py_lambda.test_LambdaHandler as lTest
+reqObj = Req.Request(lTest.EVENT_FROM_ALB)
+
+print("Path Str:",reqObj.getPathStr())
+print("Req method:",reqObj.httpMeth())
+print("Req from ALB:",reqObj.isAlb())
+print("Cookies:",reqObj.getCookies())
+print("Query params by input list:",reqObj.getQueryParams(['a']))
+print("Query params all:",reqObj.getAllQueryParam())
+print("Base64 encooded:",reqObj.isBase64())
+```
+
+When the request is sent to lambda function this request object object is created and we can use this to get all the information that we need like cookies, query parameters, headers etc from this.
+
+### Response
+
+```python
+## response.py
+import py_lambda.response as Res
+respObj = Res.Response()
+respObj = Res.Response()
+print("respObj:", respObj())
+respObj.setError()
+print("respObj:", respObj())
+respObj.setResp()
+print("respObj:", respObj())
+respObj.setResp(respBody={'a':1, 'b':2})
+print("respObj:", respObj())
+# respObj.setContentType("application/json")
+# print("respObj:", respObj())
+respObj.setHeader("Access-Control-Allow-Origin", "*")
+print("respObj:", respObj())
+```
+
+Loab-Balancer requer the response of the lambda function in a specific format. This response object is created when the function is invoked and this will be changed accordingly to send the reponse intended.
+
+### Lambda Function
 ```python
 ## lambda_function.py
 
@@ -68,3 +157,14 @@ print(resp)
 ```
 
 This will give you the reponse if you have a mapping in `lambda_mapping.py`. body in the response will contain whatever you set in the response. Even you can set the header and the response code accordingly using  `py_lambda.response.setResp` and `py_lambda.response.setHeader`
+
+### Testing
+
+```python
+## test_LambdaHandler.py
+
+import py_lambda.test_LambdaHandler as lTest
+print(lTest.testOptions())
+```
+
+This contain all the testing function that are used to build this.
