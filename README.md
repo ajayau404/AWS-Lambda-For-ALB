@@ -67,4 +67,4 @@ resp = lf.lambda_handler(event=lTest.EVENT_FROM_ALB,context= "some_context")
 print(resp)
 ```
 
-This will give you the reponse if you have a mapping lambda_mapping.py
+This will give you the reponse if you have a mapping in `lambda_mapping.py`. body in the response will contain whatever you set in the response. Even you can set the header and the response code accordingly using  `py_lambda.response.setResp` and `py_lambda.response.setHeader`
