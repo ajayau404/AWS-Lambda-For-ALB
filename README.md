@@ -33,7 +33,9 @@ This is the AWS lambda framework written in python. When the lambda function is 
 
 The package information is in [Pypi info](https://pypi.org/project/py-lambda/)
 
-## *pip install py-lambda*
+```
+pip install py-lambda
+```
 
 This source code contain the following files:
 * **lambda_function** : Contains the code that will be triggered by ALB or API-Gateway etc.
