@@ -29,7 +29,7 @@ Blogs about AWS lambda and python is [here](https://aws.amazon.com/blogs/network
 
 # Getting Started
 
-This is the AWS lambda framework written in python. When the lambda function is triggered by ALB or API-Gateway the event variable that contain all the required info will be sent to the init function. By default this init function will be in lambda_function.py and the name will be lambda_handler. This framework contains the code from which you can call the functions that are required according to the path given the request.
+This is the AWS lambda framework written in python. When the lambda function is triggered by ALB or API-Gateway the event variable that contain all the required info will be sent to the init function. By default this init function will be in lambda_function.py and the name will be lambda_handler. This framework contains the request resource mappin for the URL and response that you have to send back to Load-Balancer.
 
 This source code contain the following files:
 * **lambda_function** : Contains the code that will be triggered by ALB or API-Gateway etc.
