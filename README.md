@@ -46,9 +46,18 @@ This source code contain the following files:
 * **test_LambdaHandler** : Contains the test code that can be usedfortesting all the functions.
 
 ``` Python
+## test_LambdaHandler.py
+import py_lambda.test_LambdaHandler as lTest
+print(lTest.EVENT_FROM_ALB)
+```
+
+The above code will give the sample of the request that will be send by ALB.
+
+```python
+## import lambda_function as lf
 ## lambda_function.py
 
-import lambda_function as lf
+print(lTest.EVENT_FROM_ALB)
 
 EVENT_FROM_ALB = {  "body": u"", 
 	u"requestContext": 
