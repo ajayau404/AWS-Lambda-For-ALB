@@ -134,8 +134,9 @@ def testPath():
 	print(resp)
 
 def main():
+	testRequest()
     # testOptions()
-    testPath()
+    # testPath()
 	# resp = lh.lambda_handler(event=EVENT_FROM_ALB,context= "some_context")
 	# print(resp)
 

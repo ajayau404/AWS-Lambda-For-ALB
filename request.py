@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import sys, os, time, json
-import base64
+import base64, logging
+
+import utils
 
 REQ_PATH_STR			= "path"
 REQ_HTTP_METH 			= "httpMethod"
@@ -15,6 +17,8 @@ class Request(object):
 	The request class initilized by ALB event.
 	"""
 	def __init__(self, eventDict):
+		self.ex_dist		= {}
+		self.log 			= utils.getLog(extra=self.ex_dist, level=logging.DEBUG)
 		self.eventDict 		= None
 		self.pathList 		= None
 		self.pathListLen 	= 0
@@ -23,16 +27,17 @@ class Request(object):
 				# print("eventDict:", eventDict)
 				self.eventDict = json.loads(eventDict)
 			except Exception as e:
-				print e
+				print(e)
 		else:
 			self.eventDict = eventDict
 		self._getPathList()
 
 	def _getPathList(self):
-		# print("self.eventDict[path]", self.eventDict["path"], type(self.eventDict))
+		# self.log.debug("self.eventDict[path]", self.eventDict["path"], type(self.eventDict))
 		if REQ_PATH_STR in self.eventDict:
 			# if isinstance(self.eventDict["path"], str):
-			self.eventDict[REQ_PATH_STR] = self.eventDict[REQ_PATH_STR].encode("utf-8")
+			if sys.version_info.major < 3 and isinstance(self.eventDict[REQ_PATH_STR], unicode):
+				self.eventDict[REQ_PATH_STR] = self.eventDict[REQ_PATH_STR].encode("utf-8")
 			self.eventDict[REQ_PATH_STR] = self.eventDict[REQ_PATH_STR].lstrip('/').rstrip('/')
 			self.pathList = self.eventDict[REQ_PATH_STR].split("/")
 			self.pathListLen = len(self.pathList)
@@ -46,7 +51,11 @@ class Request(object):
 
 	def httpMeth(self):
 		if REQ_HTTP_METH in self.eventDict:
-			return self.eventDict[REQ_HTTP_METH].encode("utf-8").upper()
+			if sys.version_info.major < 3 and isinstance(self.eventDict[REQ_HTTP_METH], unicode):
+				return self.eventDict[REQ_HTTP_METH].encode("utf-8").upper()
+			else:
+				return self.eventDict[REQ_HTTP_METH].upper()
+
 
 	def isAlb(self):
 		if "requestContext" in self.eventDict:
@@ -83,7 +92,7 @@ class Request(object):
 
 	def getHeaderParm(self, parmList):
 		retDict = {}
-		# print("header:", self.eventDict[REQ_HTTP_HEADER])
+		# self.log.debug("header:", self.eventDict[REQ_HTTP_HEADER])
 		if REQ_HTTP_HEADER in self.eventDict:
 			for eachInp in parmList:
 				if eachInp in self.eventDict[REQ_HTTP_HEADER]:
